@@ -1,0 +1,1 @@
+JavaScript 名稱空間管理 https://openhome.cc/Gossip/ECMAScript/NameSpace.html

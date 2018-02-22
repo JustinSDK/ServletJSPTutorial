@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>即時資料</title>
+    <meta charset="UTF-8">
+  </head>
+  <body>
+      即時資料: <span id="data">0</span>
+
+    <script type="text/javascript">
+        function asyncUpdate() {
+            let request = new XMLHttpRequest();
+            request.onload = function() {
+                if(request.status === 200) {
+                    document.getElementById('data').innerHTML = request.responseText;
+                    asyncUpdate();
+                }
+            };
+            request.open('GET', 'asyncNumber?timestamp=' + new Date().getTime());
+            request.send(null);
+        }
+
+        asyncUpdate();
+    </script>      
+  </body>
+</html>  

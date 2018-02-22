@@ -1,0 +1,14 @@
+apply plugin: 'java-library'
+
+repositories {
+    jcenter()
+}
+
+dependencies {
+    // https://mvnrepository.com/artifact/com.sun.mail/javax.mail
+    compile group: 'com.sun.mail', name: 'javax.mail', version: '1.6.0'
+    
+    api 'org.apache.commons:commons-math3:3.6.1'
+    implementation 'com.google.guava:guava:21.0'
+    testImplementation 'junit:junit:4.12'
+}

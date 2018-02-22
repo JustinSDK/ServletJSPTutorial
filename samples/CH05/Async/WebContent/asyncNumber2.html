@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>即時資料</title>
+    <meta charset="UTF-8">
+  </head>
+  <body>
+      即時資料: <span id="data">0</span>
+
+    <script type="text/javascript">
+       new EventSource("asyncNumber2")
+                .addEventListener(
+                    "message", 
+                    e => document.getElementById('data').innerHTML = e.data
+                );
+    </script>      
+  </body>
+</html>

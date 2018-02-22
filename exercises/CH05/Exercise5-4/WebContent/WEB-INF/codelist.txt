@@ -1,0 +1,8 @@
+\[b]	<b>
+\[/b]	</b>
+\[i]	<i>
+\[/i]	</i>
+\[big]	<big>
+\[/big]	</big>
+\[small]	<small>
+\[/small]	</small>

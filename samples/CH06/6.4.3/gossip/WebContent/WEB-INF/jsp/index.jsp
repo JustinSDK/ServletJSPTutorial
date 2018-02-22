@@ -1,0 +1,64 @@
+<%@page import="java.util.List" %>
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Gossip 微網誌</title>
+		<link rel="stylesheet" href="css/gossip.css" type="text/css">
+	</head>
+	<body>
+	    <div id="login">
+			<div>
+			    <img src='images/caterpillar.jpg' alt='Gossip 微網誌'/>
+		    </div>	
+			<a href='register'>還不是會員？</a>
+			<p></p>
+			
+        <%
+            List<String> errors = (List<String>) request.getAttribute("errors");
+            if(errors != null) {
+        %>
+            <ul style='color: rgb(255, 0, 0);'>
+        <%
+                for(String error : errors) {
+        %>
+                    <li><%= error %></li>
+        <%
+                }
+        %>
+            </ul>
+        <%
+            }
+        %>
+
+			<form method='post' action='login'>
+				<table>
+					<tr>
+						<td colspan='2'>會員登入</td>
+					<tr>
+						<td>名稱：</td>
+						<td><input type='text' name='username' value='${param.username}'></td>
+					</tr>
+					<tr>
+						<td>密碼：</td>
+						<td><input type='password' name='password'></td>
+					</tr>
+					<tr>
+						<td colspan='2' align='center'><input type='submit' value='登入'></td>
+					</tr>
+					<tr>
+						<td colspan='2'><a href='forgot.html'>忘記密碼？</a></td>
+					</tr>
+				</table>
+			</form>
+		</div>
+		<div>
+		    <h1>Gossip ... XD</h1>
+		    <ul>
+		        <li>談天說地不奇怪</li>
+		        <li>分享訊息也可以</li>
+		        <li>隨意寫寫表心情</li>
+	        </ul>
+		</div>
+	</body>
+</html>

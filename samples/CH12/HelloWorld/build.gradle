@@ -1,0 +1,7 @@
+apply plugin: 'java'
+apply plugin:'application'
+mainClassName = "cc.openhome.Main"
+
+run {
+    args username
+}

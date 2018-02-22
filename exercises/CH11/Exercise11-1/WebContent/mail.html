@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>純文字郵件傳送</title>
+</head>
+<body>
+    <form action="mail" method="post" enctype="multipart/form-data">
+    <input type="submit" value="傳送"/><br><br>
+    來自：<input type="text" name="from" size="50"/><br>
+    寄給：<input type="text" name="to" size="50"/><br>
+    主題：<input type="text" name="subject" size="50"/><br>
+    圖片：<input type="file" name="image" size="50"/><br><br>
+    說明：<br>
+　　　<textarea name="text" rows="10" cols="45"></textarea>   
+    </form>
+</body>
+</html>

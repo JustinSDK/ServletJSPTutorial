@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>HTML 附件郵件傳送</title>
+</head>
+<body>
+    <form action="mail2" method="post" enctype="multipart/form-data">
+    <input type="submit" value="傳送"/><br>
+    寄件人：<input type="text" name="from" size="50"/><br>
+    收件人：<input type="text" name="to" size="50"/><br>
+    主　旨：<input type="text" name="subject" size="50"/><br>
+    附　檔：<input type="file" name="file" size="50"/><br><br>
+    <textarea name="text" rows="10" cols="50"></textarea>   
+    </form>
+</body>
+</html>
