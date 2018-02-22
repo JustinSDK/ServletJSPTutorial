@@ -16,9 +16,7 @@ import cc.openhome.web.AccessFilter;
 @PropertySource("classpath:path.properties")
 @SpringBootApplication(scanBasePackages= {
         "cc.openhome.controller",
-        "cc.openhome.model",
-        "cc.openhome.web"
-        
+        "cc.openhome.model"        
     })
 public class GossipApplication {
 
