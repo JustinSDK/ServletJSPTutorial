@@ -41,12 +41,8 @@ public class AccessController {
             HttpServletRequest request) {
 
         Optional<Account> optionalAcct = userService.accountByName(username);
-        if(!(optionalAcct.isPresent() && optionalAcct.get().isEnabled())) {
-            loginFailed(username, request);
-            return INDEX_PATH;
-        }
 
-        if(userService.login(username, password)) {
+        if(optionalAcct.isPresent() && optionalAcct.get().isEnabled() && userService.login(username, password)) {
             request.getSession().setAttribute("login", username);
             return REDIRECT_MEMBER_PATH;
         } else {
