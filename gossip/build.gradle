@@ -1,0 +1,41 @@
+buildscript {
+	ext {
+		springBootVersion = '1.5.10.RELEASE'
+	}
+	repositories {
+		mavenCentral()
+	}
+	dependencies {
+		classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+	}
+}
+
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'org.springframework.boot'
+
+group = 'cc.openhome'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = 1.8
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+    // Servlet API
+    //compile('javax.servlet:javax.servlet-api:4.0.0')
+    compile('com.googlecode.owasp-java-html-sanitizer:owasp-java-html-sanitizer:20171016.1')
+    compile('net.sourceforge.nekohtml:nekohtml:1.9.22')
+    
+    
+	compile('org.springframework.boot:spring-boot-starter-jdbc')
+	compile('org.springframework.boot:spring-boot-starter-mail')
+	compile('org.springframework.boot:spring-boot-starter-thymeleaf')
+	compile('org.springframework.boot:spring-boot-starter-validation')
+	compile('org.springframework.boot:spring-boot-starter-web')
+	compile('org.springframework.boot:spring-boot-starter-security')
+	
+	runtime('com.h2database:h2')
+	testCompile('org.springframework.boot:spring-boot-starter-test')
+}
