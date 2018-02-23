@@ -2,6 +2,7 @@ package cc.openhome;
 
 import java.io.IOException;
 import java.util.Arrays;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
@@ -16,6 +17,7 @@ import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.core.authority.AuthorityUtils;
 
 import cc.openhome.model.UserService;
+import cc.openhome.model.Account;
 
 @Configuration
 @EnableWebSecurity
@@ -61,7 +63,9 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter  {
           String name = authentication.getName();
           String password = authentication.getCredentials().toString();
           
-          if(userService.login(name, password)) {
+          Optional<Account> optionalAcct = userService.accountByName(name);
+          
+          if(optionalAcct.isPresent() && optionalAcct.get().isEnabled() & userService.login(name, password)) {
               return new UsernamePasswordAuthenticationToken(
                       name, password, AuthorityUtils.createAuthorityList("ROLE_MEMBER"));
           }
