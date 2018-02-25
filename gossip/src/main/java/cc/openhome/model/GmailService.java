@@ -9,9 +9,9 @@ import javax.mail.internet.MimeMessage;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.mail.javamail.JavaMailSenderImpl;
 import org.springframework.mail.javamail.MimeMessageHelper;
-import org.springframework.stereotype.Component; 
+import org.springframework.stereotype.Service; 
 
-@Component
+@Service
 public class GmailService implements EmailService {
     private final String mailUser;
     private final JavaMailSenderImpl mailSender;
