@@ -79,11 +79,7 @@ public class UserService {
         return acctDAO.accountByEmail(email).isPresent();
     }
     
-    public Optional<Account> verify(String email, String token) {
-        System.out.println(email);
-        
-        System.out.println(token);
-        
+    public Optional<Account> verify(String email, String token) {        
         Optional<Account> optionalAcct= acctDAO.accountByEmail(email);
         if(optionalAcct.isPresent()) {
             Account acct = optionalAcct.get();
